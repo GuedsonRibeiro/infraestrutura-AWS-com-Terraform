@@ -100,22 +100,4 @@ resource "aws_route_table_association" "D" {
   route_table_id = aws_route_table.Priv_Route_Table.id
 }
 
-# VPC_ENDPOINT
-resource "aws_vpc_endpoint" "ec2" {
-  vpc_id            = "${aws_vpc.vpc10.id}"
-  service_name = "com.amazonaws.us-east-1.ec2"
-  vpc_endpoint_type = "Interface"
 
-}
-
-# SNS 
-
-resource "aws_sns_topic" "topic" {
-  name = "topic-name"
-}
-
-resource "aws_sns_topic_subscription" "email-target" {
-  topic_arn = aws_sns_topic.topic.arn
-  protocol  = "email"
-  endpoint  = "guedson.ge@gmail.com"
-}
