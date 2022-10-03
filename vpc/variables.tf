@@ -29,6 +29,3 @@ variable "sn_priv_1c_cidr" {
   default = "10.0.4.0/24"
 }
 
-variable "sg_pub_id" {
-  default = "aws_security_group.sg-pub.id"
-}
