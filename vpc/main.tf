@@ -111,7 +111,7 @@ resource "aws_vpc_endpoint" "ec2" {
 # SNS 
 
 resource "aws_sns_topic" "topic" {
-  name = "topic-nam"
+  name = "topic-name"
 }
 
 resource "aws_sns_topic_subscription" "email-target" {
