@@ -1,6 +1,6 @@
 # SECURITY GROUP
-resource "aws_security_group" "sg-pub" {
-    name        = "sg-pub"
+resource "aws_security_group" "sg_pub" {
+    name        = "sg_pub"
     description = "Security Group public"
     vpc_id      = var.vpc_id
     
@@ -37,7 +37,7 @@ resource "aws_security_group" "sg-pub" {
     }
 
     tags = {
-        Name = "sg-pub"
+        Name = "sg_pub"
     }
 }
 
@@ -85,7 +85,7 @@ resource "aws_launch_template" "lt_app_notify" {
     name                   = "lt_app_notify"
     image_id               = var.ami
     instance_type          = var.instance_type
-    vpc_security_group_ids = [aws_security_group.sg-pub.id]
+    vpc_security_group_ids = [aws_security_group.sg_pub.id]
     key_name               = var.ssh_key
     user_data              = "${base64encode(data.template_file.user_data.rendered)}"
 
@@ -107,7 +107,7 @@ resource "aws_lb" "lb_app_notify" {
     name               = "lb-app-notify"
     load_balancer_type = "application"
     subnets            = [var.sn_pub_1a_id, var.sn_pub_1c_id]
-    security_groups    = [aws_security_group.sg-pub.id]
+    security_groups    = [aws_security_group.sg_pub.id]
     
     tags = {
         Name = "lb_app_notify"
