@@ -16,7 +16,7 @@ provider "aws" {
 # MODULES
 module "vpc" {
     source          = "./vpc"
-    security_group_id = module.ec2.sg_pub_id
+    sg_pub_id = module.ec2.sg_pub_id
 }
 
 module "rds" {
