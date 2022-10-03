@@ -30,5 +30,5 @@ variable "sn_priv_1c_cidr" {
 }
 
 variable "sg_pub_id" {
-  type = string
+  type = strin
 }
