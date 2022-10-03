@@ -28,3 +28,7 @@ variable "sn_priv_1a_cidr" {
 variable "sn_priv_1c_cidr" {
   default = "10.0.4.0/24"
 }
+
+variable "sg_pub_id" {
+  type = string
+}
